@@ -9,7 +9,7 @@ interface TodoListProps {
 
 const TodoList = ({ todos, onDelete, onEdit }: TodoListProps) => {
   return (
-    <div className="space-y-4">
+    <div className="space-y-4" aria-label="todo-list">
       {todos.map((todo) => (
         <TodoItem
           key={todo.id}
