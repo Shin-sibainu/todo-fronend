@@ -11,4 +11,16 @@ test.describe("Todo Application", () => {
 
     await expect(page.locator("text=Learn Playwright").last()).toBeVisible();
   });
+
+  test("Todoの削除", async ({ page }) => {
+    await page.fill('input[placeholder="Add a new task"]', "Delete this Task");
+    await page.click("text=Add");
+
+    await expect(page.locator("text=Delete this Task").last()).toBeVisible();
+
+    await page.locator('button[aria-label="削除"]').last().click();
+    await expect(
+      page.locator('text="Delete this Task"').last()
+    ).not.toBeVisible();
+  });
 });

@@ -39,6 +39,7 @@ const TodoItem = ({ todo, onDelete, onEdit }: TodoItem) => {
             className="px-2 focus:outline-none"
             value={inputText}
             onChange={(e) => setIsInputText(e.target.value)}
+            placeholder="Edit"
           />
         ) : (
           <span
